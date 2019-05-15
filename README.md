@@ -1,13 +1,13 @@
 # Project Name
 
-> Project description
+> Implment menu view 
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/krummurk/textDetails_proxy
+  - https://github.com/krummurk/textDetails_service
+  - https://github.com/krummurk/customer-reviews-proxy
+  - https://github.com/krummurk/customer-reviews
 
 ## Table of Contents
 
