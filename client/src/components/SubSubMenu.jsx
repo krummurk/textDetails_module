@@ -1,11 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
-const Container = styled.div`
+// import React from 'react';
+// import styled from 'styled-components';
+const SubSubMenuStyle = {};
+SubSubMenuStyle.Container = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-const Wrapper = styled.section`
+SubSubMenuStyle.Wrapper = styled.section`
   padding: 0.75rem;
   border-bottom: 1px solid #d8d9db;
   margin: 0 0 0.25rem;
@@ -28,11 +29,11 @@ SubMenu.block = styled.div`
 
 `
 
-const Flexrow = styled.div`
+SubSubMenuStyle.Flexrow = styled.div`
   background-color: white;
   display: flex;
 `
-const Flexcolumn = styled.div`
+SubSubMenuStyle.Flexcolumn = styled.div`
   width: ${(props) => props.size / 2 * 100}vw;
   margin-left: 1rem;
   margin-right: 1rem;
@@ -69,15 +70,15 @@ var SubSubMenu = ({ subsubMenu }) => {
         return (
             <SubMenu.block key={idx.toString()} >
                 <Item.row>
-                <Item.column>
-                    <Item.name> {i.name} </Item.name>
-                </Item.column>
-                <Item.column >
-                    <Item.price> ${i.basePrice} </Item.price> 
-                </Item.column>
+                    <Item.column>
+                        <Item.name> {i.name} </Item.name>
+                    </Item.column>
+                    <Item.column >
+                        <Item.price> ${i.basePrice} </Item.price>
+                    </Item.column>
                 </Item.row>
                 <Item.row>
-                 <Item.description> {i.description} </Item.description>
+                    <Item.description> {i.description} </Item.description>
                 </Item.row>
             </SubMenu.block>
         )
@@ -86,15 +87,15 @@ var SubSubMenu = ({ subsubMenu }) => {
         return (
             <SubMenu.block key={(idx + 10).toString()}>
                 <Item.row>
-                <Item.column>
-                    {i.name}
-                </Item.column>
-                <Item.column >
-                    <Item.price> ${i.basePrice} </Item.price> 
-                </Item.column>
+                    <Item.column>
+                        {i.name}
+                    </Item.column>
+                    <Item.column >
+                        <Item.price> ${i.basePrice} </Item.price>
+                    </Item.column>
                 </Item.row>
                 <Item.row>
-                 <Item.description> {i.description} </Item.description>
+                    <Item.description> {i.description} </Item.description>
                 </Item.row>
             </SubMenu.block>
         )
@@ -102,24 +103,24 @@ var SubSubMenu = ({ subsubMenu }) => {
 
 
     return (
-        <Container>
-            <Wrapper>
-                <Flexrow>
+        <SubSubMenuStyle.Container>
+            <SubSubMenuStyle.Wrapper>
+                <SubSubMenuStyle.Flexrow>
                     <SubMenu.title>{subsubMenu.name}</SubMenu.title>
-                </Flexrow>
-                <Flexrow>
+                </SubSubMenuStyle.Flexrow>
+                <SubSubMenuStyle.Flexrow>
                     <SubMenu.descrip>{subsubMenu.description}</SubMenu.descrip>
-                </Flexrow>
-                <Flexrow>
-                    <Flexcolumn size={1}>
+                </SubSubMenuStyle.Flexrow>
+                <SubSubMenuStyle.Flexrow>
+                    <SubSubMenuStyle.Flexcolumn size={1}>
                         {leftSide}
-                    </Flexcolumn>
-                    <Flexcolumn size={1}>
+                    </SubSubMenuStyle.Flexcolumn>
+                    <SubSubMenuStyle.Flexcolumn size={1}>
                         {rightSide}
-                    </Flexcolumn>
-                </Flexrow>
-            </Wrapper>
-        </Container>
+                    </SubSubMenuStyle.Flexcolumn>
+                </SubSubMenuStyle.Flexrow>
+            </SubSubMenuStyle.Wrapper>
+        </SubSubMenuStyle.Container>
     )
 }
 export default SubSubMenu;

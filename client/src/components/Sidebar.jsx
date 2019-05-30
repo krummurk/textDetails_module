@@ -1,6 +1,6 @@
-import React from 'react';
+// import React from 'react';
+// import styled from 'styled-components'
 import { review_icon, price_icon, cuisine_icon, crossStreet_icon, diningStyle_icon } from './Icons.jsx';
-import styled from 'styled-components'
 
 
 const Button = styled.button`

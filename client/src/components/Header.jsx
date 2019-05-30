@@ -1,7 +1,7 @@
-import React from 'react';
+// import React from 'react';
 import Description from './Description.jsx';
 import { review_icon, price_icon, cuisine_icon, crossStreet_icon, diningStyle_icon, neighborhood_icon, crossSt_icon, hours_icon } from './Icons.jsx';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import StarSymbol from './StarSymbol.jsx';
 
 const H = {};
@@ -34,7 +34,9 @@ H.Des = styled.section`
   text-align: left;
 
 `
-const Container = styled.div`
+
+const HeaderStyle = {}
+HeaderStyle.Container = styled.div`
   display: flex;
   flex-direction: column;
 `;
@@ -42,13 +44,13 @@ H.Title = styled.h2`
   font-size: 3em;
   text-align: left;
 `;
-const Wrapper = styled.section`
+HeaderStyle.Wrapper = styled.section`
   padding: 0.75rem;
   border-bottom: 1px solid #d8d9db;
   margin: 0 0 0.25rem;
 `;
 
-const Block = styled.div`
+HeaderStyle.Block = styled.div`
   height: 1.5rem;
   margin-bottom: 1rem;
   display: flex;
@@ -57,14 +59,16 @@ const Block = styled.div`
   padding: 0.5rem;
 
 `;
-const BlockItem = styled.span`
+
+HeaderStyle.BlockItem = styled.span`
   margin-right: 1rem;
   color: tomato;
   font-weight: bold;
   align-self: center;
 
 `
-const BlockText = styled.span`
+
+HeaderStyle.BlockText = styled.span`
   margin-right: 1rem;
 `
 
@@ -94,23 +98,23 @@ var Header = ({ res }) => {
     ))
   }
   return (
-    <Container>
-      <Wrapper>
+    <HeaderStyle.Container>
+      <HeaderStyle.Wrapper>
         <H.Title>{res.name}</H.Title>
-      </Wrapper>
-      <Block>
-        <StarSymbol stars={res.star}> {res.star} </StarSymbol><BlockText> </BlockText>
-        <BlockItem> <H.ReviewIcon /></BlockItem> <BlockText>{res.reviewCount} reviews </BlockText>
-        <BlockItem>{price_icon}</BlockItem> <BlockText>{pricelevel_verbal}</BlockText>
-        <BlockItem>{cuisine_icon}</BlockItem> <BlockText>{res.cuisine}</BlockText>
-      </Block>
+      </HeaderStyle.Wrapper>
+      <HeaderStyle.Block>
+        <StarSymbol stars={res.star}> {res.star} </StarSymbol><HeaderStyle.BlockText> </HeaderStyle.BlockText>
+        <HeaderStyle.BlockItem> <H.ReviewIcon /></HeaderStyle.BlockItem> <HeaderStyle.BlockText>{res.reviewCount} reviews </HeaderStyle.BlockText>
+        <HeaderStyle.BlockItem>{price_icon}</HeaderStyle.BlockItem> <HeaderStyle.BlockText>{pricelevel_verbal}</HeaderStyle.BlockText>
+        <HeaderStyle.BlockItem>{cuisine_icon}</HeaderStyle.BlockItem> <HeaderStyle.BlockText>{res.cuisine}</HeaderStyle.BlockText>
+      </HeaderStyle.Block>
       <H.Tag>
         Top Tags: {item}
       </H.Tag>
       <H.Des>
         <Description description={res.description} />
       </H.Des>
-    </Container>
+    </HeaderStyle.Container>
   );
 }
 
