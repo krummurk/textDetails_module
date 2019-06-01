@@ -1,6 +1,6 @@
 const mongoose = require('mongoose'); // mongod --config /usr/local/etc/mongod.conf
 const Promise = require('bluebird')
-mongoose.connect('mongodb://localhost/fetcher2');
+mongoose.connect('mongodb://database/fetcher2');
 var MenuSchema = mongoose.Schema({
     name: String,
     description: String,
