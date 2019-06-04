@@ -4,6 +4,7 @@ services:
     image: "mongo"
     ports:
      - "27017:27017"
+    #  for SQL it is 3306
   databaseseed:
     build: ./dataGenerator/
     depends_on:
