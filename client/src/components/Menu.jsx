@@ -1,31 +1,32 @@
-import React from 'react';
-import styled from 'styled-components';
+// import React from 'react';
+// import styled from 'styled-components';
 import SubSubMenu from './SubSubMenu.jsx';
-const Container = styled.div`
+const MenuStyle = {}
+MenuStyle.Container = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-const Wrapper = styled.section`
+MenuStyle.Wrapper = styled.section`
   padding: 0.5rem;
   border-bottom: 1px solid #d8d9db;
   margin: 0 0 0.25rem;
   font-size : 2rem
 `;
 
-const SubMenuWrapper = styled.section`
+MenuStyle.SubMenuWrapper = styled.section`
   padding: 0.5rem;
   border-bottom: 1px solid #d8d9db;
   margin: 0 0 0.25rem;
   font-size : 1rem
 `;
 
-const LongMenuBox = styled.div`
+MenuStyle.LongMenuBox = styled.div`
     display: flex;
     flex-direction: column;
     background-color: white;
 `
-const MenuBox = styled.div`
+MenuStyle.MenuBox = styled.div`
   background-color: white;
   display: flex;
   max-height: 500px;
@@ -45,7 +46,7 @@ const MenuBox = styled.div`
   }
 `
 
-const Float = styled.button`
+MenuStyle.Float = styled.button`
     align-self: center;
     border: 1px solid #d8d9db;
     width: 20%;
@@ -75,13 +76,13 @@ const Float = styled.button`
 
 
 
-const SubMenuButton = styled.section`
+MenuStyle.SubMenuButton = styled.section`
     border-bottom: 1px solid #d8d9db;
     display: flex-wrap;
     align-items: center;
     height: 4rem;
 `;
-const Button = styled.button`
+MenuStyle.Button = styled.button`
     align-items: center;
     border: 1px solid #d8d9db;
     font-family: 'Montserrat',sans-serif;
@@ -127,23 +128,23 @@ class Menu extends React.Component {
     makeButtons() {
         var items = this.state.listing.map((i, idx) => {
             return (
-                <Button key={idx.toString()} name={idx.toString()} onClick={this.switchMenu}>
+                <MenuStyle.Button key={idx.toString()} name={idx.toString()} onClick={this.switchMenu}>
                     {i}
-                </Button>)
+                </MenuStyle.Button>)
         })
         return items;
     }
     render() {
         return (
-            <Container>
-                <Wrapper>Menu</Wrapper>
-                <SubMenuButton>
+            <MenuStyle.Container>
+                <MenuStyle.Wrapper>Menu</MenuStyle.Wrapper>
+                <MenuStyle.SubMenuButton>
                     {this.makeButtons()}
-                </SubMenuButton>
-                <SubMenuWrapper>
+                </MenuStyle.SubMenuButton>
+                <MenuStyle.SubMenuWrapper>
                     <SubMenu subMenu={this.state.subMenu} collapse={this.state.collapse} expand={this.expandMenu} />
-                </SubMenuWrapper>
-            </Container>
+                </MenuStyle.SubMenuWrapper>
+            </MenuStyle.Container>
         );
     }
 }
@@ -158,22 +159,22 @@ var SubMenu = ({ subMenu, collapse, expand }) => {
     })
     if (!collapse) {
         return (
-            <LongMenuBox>
+            <MenuStyle.LongMenuBox>
                 {longMenu}
-                <Float>
+                <MenuStyle.Float>
                     <div href="#" className="menuButton" onClick={expand}>Collapse</div>
-                </Float>
-            </LongMenuBox>)
+                </MenuStyle.Float>
+            </MenuStyle.LongMenuBox>)
     } else {
         return (
-            <MenuBox>
+            <MenuStyle.MenuBox>
                 <SubSubMenu subsubMenu={subMenu.menus[0]}></SubSubMenu>
                 <div className="Readmore">
                 </div>
-                <Float>
+                <MenuStyle.Float>
                     <div href="#" className="menuButton" onClick={expand}>Expand</div>
-                </Float>
-            </MenuBox>
+                </MenuStyle.Float>
+            </MenuStyle.MenuBox>
         )
     }
 }

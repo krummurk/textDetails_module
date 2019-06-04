@@ -1,18 +1,14 @@
-import { createGlobalStyle } from "styled-components";
-import React from 'react';
+// import { createGlobalStyle } from "styled-components";
+// import React from 'react';
+// import styled from 'styled-components'
 import $ from 'jquery';
 import Header from './Header.jsx';
 import Menu from './Menu.jsx';
-import Sidebar from './Sidebar.jsx';
-import exampleData from './exampleData.js';
-import styled from 'styled-components'
 
 
 const GlobalStyles = styled.div`
-  body {
     @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
     font-family: 'Montserrat', sans-serif;
-  }
 `
 
 

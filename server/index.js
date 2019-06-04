@@ -13,13 +13,13 @@ var cors = require('cors');
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(express.static(path.join(__dirname, '../client/dist'))); // this line becomes useless as we serve the template 
+app.use(express.static(path.join(__dirname, './'))); // this line becomes useless as we serve the template 
 
 
 
 app.get('/restaurant/:name', function(req, res) {
     res.header("X-Content-Type", "text/javascript");
-    res.sendFile(path.join(__dirname, '/../client/dist/index.html'))
+    res.sendFile(path.join(__dirname, '/index.html'))
 });
 
 app.get('/API/restaurant/:name', function(req, res) {
@@ -38,7 +38,7 @@ app.get('/API/restaurant/:name', function(req, res) {
 });
 
 
-app.listen(3003, function() {
-    console.log('listening on port 3003!');
+app.listen(6200, function() {
+    console.log('listening on port 6200!');
 });
 

@@ -1,7 +1,7 @@
 const faker = require('faker');
 const fs = require('fs');
 const mongoose = require('mongoose'); // mongod --config /usr/local/etc/mongod.conf
-mongoose.connect('mongodb://localhost/fetcher2');
+mongoose.connect('mongodb://database/fetcher2');
 var resDesData = require('./res44Tehama.js');
 resDesData = resDesData[0].map((i) => {
     delete i.apiKey
@@ -39,6 +39,7 @@ function onInsert(err, docs) {
     } else {
         console.info('%d restaurants were successfully stored.', docs.length);
     }
+    return ; 
 }
 
 var menu = ['Lunch', 'Breakfast', 'Dinner', 'Seasonal Menu', 'Bar', 'Spring Menu', 'Winter Menu', 'Special', 'Today"s Special',
@@ -171,7 +172,7 @@ var RestaurantSchema = mongoose.Schema({
 });
 
 var Restaurant = mongoose.model('Restaurant', RestaurantSchema);
-Restaurant.collection.insert(resDesData, onInsert);
+Restaurant.collection.insert(resDesData, ()=>{});
 
 
 

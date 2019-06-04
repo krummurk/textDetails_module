@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components'
+// import React from 'react';
+// import styled from 'styled-components'
 
 const RedDesc = styled.p`
     color:red;
@@ -26,19 +26,19 @@ class Description extends React.Component {
         var toShow = description.slice(0, 50);
         if (this.state.show) {
             return (
-                <p>
+                <div>
                     {description.join(' ')}
                     <RedDesc onClick={this.show}>
                         -show less
                     </RedDesc>
-                </p>);
+                </div>);
         } else {
             return (
-                <p>{toShow.join(' ')}
+                <div>{toShow.join(' ')}
                     <RedDesc onClick={this.show}>
                         +show more
                     </RedDesc>
-                </p>);
+                </div>);
         }
 
     }

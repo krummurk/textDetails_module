@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+// import React from "react";
+// import styled from "styled-components";
 import IconStar from "./IconStar.jsx";
 
 const S = {};
